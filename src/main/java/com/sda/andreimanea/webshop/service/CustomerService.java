@@ -4,8 +4,6 @@ import com.sda.andreimanea.webshop.model.Account;
 import com.sda.andreimanea.webshop.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class CustomerService {
     private final AccountRepository accountRepository;
@@ -19,7 +17,7 @@ public class CustomerService {
         accountRepository.save(account);
     }
 
-    public List<Account> getCustomerAccounts(){
-        return accountRepository.getAllAccounts();
+    public Iterable<Account> getCustomerAccounts(){
+        return accountRepository.findAll();
     }
 }
