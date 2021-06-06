@@ -17,7 +17,7 @@ public class Account {
     private Boolean isClosed;
     @Column(name = "creation_date")
     private Date creationDate;
-    @Column(name = "close_date")
+    @Column(name = "closed_date")
     private Date closeDate;
 
     public Long getId() {
