@@ -25,13 +25,13 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public List<Product> findAll(){
+    public List<Product> findAll() {
         //return new ArrayList<Product>((Collection<? extends Product>) productRepository.findAll());
         //feriti-va de cast-uri !!!
         return StreamSupport.stream(productRepository.findAll().spliterator(), false).collect(Collectors.toList());
     }
 
-    public Optional<Product> findByID(Long productId){
+    public Optional<Product> findByID(Long productId) {
         return productRepository.findById(productId);
     }
 }
